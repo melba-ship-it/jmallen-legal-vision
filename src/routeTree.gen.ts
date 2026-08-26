@@ -10,15 +10,30 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as LaFirmaRouteImport } from './routes/la-firma'
 import { Route as RutaDeInversionRouteImport } from './routes/ruta-de-inversion'
+import { Route as ServiciosComplementariosRouteImport } from './routes/servicios-complementarios'
 import { Route as AreasDePracticaIndexRouteImport } from './routes/areas-de-practica.index'
 import { Route as AreasDePracticaAreaRouteImport } from './routes/areas-de-practica.$area'
 import { Route as MercadosDiasporaDominicanaRouteImport } from './routes/mercados.diaspora-dominicana'
 import { Route as MercadosInversionistasColombiaRouteImport } from './routes/mercados.inversionistas-colombia'
+import { Route as RecursosIndexRouteImport } from './routes/recursos.index'
+import { Route as RecursosReformaCodigoTrabajoRouteImport } from './routes/recursos.reforma-codigo-trabajo'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactoRoute = ContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaFirmaRoute = LaFirmaRouteImport.update({
+  id: '/la-firma',
+  path: '/la-firma',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RutaDeInversionRoute = RutaDeInversionRouteImport.update({
@@ -26,6 +41,12 @@ const RutaDeInversionRoute = RutaDeInversionRouteImport.update({
   path: '/ruta-de-inversion',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServiciosComplementariosRoute =
+  ServiciosComplementariosRouteImport.update({
+    id: '/servicios-complementarios',
+    path: '/servicios-complementarios',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AreasDePracticaIndexRoute = AreasDePracticaIndexRouteImport.update({
   id: '/areas-de-practica/',
   path: '/areas-de-practica/',
@@ -48,66 +69,112 @@ const MercadosInversionistasColombiaRoute =
     path: '/mercados/inversionistas-colombia',
     getParentRoute: () => rootRouteImport,
   } as any)
+const RecursosIndexRoute = RecursosIndexRouteImport.update({
+  id: '/recursos/',
+  path: '/recursos/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecursosReformaCodigoTrabajoRoute =
+  RecursosReformaCodigoTrabajoRouteImport.update({
+    id: '/recursos/reforma-codigo-trabajo',
+    path: '/recursos/reforma-codigo-trabajo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
+  '/la-firma': typeof LaFirmaRoute
   '/ruta-de-inversion': typeof RutaDeInversionRoute
+  '/servicios-complementarios': typeof ServiciosComplementariosRoute
   '/areas-de-practica/$area': typeof AreasDePracticaAreaRoute
   '/mercados/diaspora-dominicana': typeof MercadosDiasporaDominicanaRoute
   '/mercados/inversionistas-colombia': typeof MercadosInversionistasColombiaRoute
+  '/recursos/reforma-codigo-trabajo': typeof RecursosReformaCodigoTrabajoRoute
   '/areas-de-practica/': typeof AreasDePracticaIndexRoute
+  '/recursos/': typeof RecursosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
+  '/la-firma': typeof LaFirmaRoute
   '/ruta-de-inversion': typeof RutaDeInversionRoute
+  '/servicios-complementarios': typeof ServiciosComplementariosRoute
   '/areas-de-practica/$area': typeof AreasDePracticaAreaRoute
   '/mercados/diaspora-dominicana': typeof MercadosDiasporaDominicanaRoute
   '/mercados/inversionistas-colombia': typeof MercadosInversionistasColombiaRoute
+  '/recursos/reforma-codigo-trabajo': typeof RecursosReformaCodigoTrabajoRoute
   '/areas-de-practica': typeof AreasDePracticaIndexRoute
+  '/recursos': typeof RecursosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
+  '/la-firma': typeof LaFirmaRoute
   '/ruta-de-inversion': typeof RutaDeInversionRoute
+  '/servicios-complementarios': typeof ServiciosComplementariosRoute
   '/areas-de-practica/$area': typeof AreasDePracticaAreaRoute
   '/mercados/diaspora-dominicana': typeof MercadosDiasporaDominicanaRoute
   '/mercados/inversionistas-colombia': typeof MercadosInversionistasColombiaRoute
+  '/recursos/reforma-codigo-trabajo': typeof RecursosReformaCodigoTrabajoRoute
   '/areas-de-practica/': typeof AreasDePracticaIndexRoute
+  '/recursos/': typeof RecursosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/contacto'
+    | '/la-firma'
     | '/ruta-de-inversion'
+    | '/servicios-complementarios'
     | '/areas-de-practica/$area'
     | '/mercados/diaspora-dominicana'
     | '/mercados/inversionistas-colombia'
+    | '/recursos/reforma-codigo-trabajo'
     | '/areas-de-practica/'
+    | '/recursos/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/contacto'
+    | '/la-firma'
     | '/ruta-de-inversion'
+    | '/servicios-complementarios'
     | '/areas-de-practica/$area'
     | '/mercados/diaspora-dominicana'
     | '/mercados/inversionistas-colombia'
+    | '/recursos/reforma-codigo-trabajo'
     | '/areas-de-practica'
+    | '/recursos'
   id:
     | '__root__'
     | '/'
+    | '/contacto'
+    | '/la-firma'
     | '/ruta-de-inversion'
+    | '/servicios-complementarios'
     | '/areas-de-practica/$area'
     | '/mercados/diaspora-dominicana'
     | '/mercados/inversionistas-colombia'
+    | '/recursos/reforma-codigo-trabajo'
     | '/areas-de-practica/'
+    | '/recursos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactoRoute: typeof ContactoRoute
+  LaFirmaRoute: typeof LaFirmaRoute
   RutaDeInversionRoute: typeof RutaDeInversionRoute
+  ServiciosComplementariosRoute: typeof ServiciosComplementariosRoute
   AreasDePracticaAreaRoute: typeof AreasDePracticaAreaRoute
   MercadosDiasporaDominicanaRoute: typeof MercadosDiasporaDominicanaRoute
   MercadosInversionistasColombiaRoute: typeof MercadosInversionistasColombiaRoute
+  RecursosReformaCodigoTrabajoRoute: typeof RecursosReformaCodigoTrabajoRoute
   AreasDePracticaIndexRoute: typeof AreasDePracticaIndexRoute
+  RecursosIndexRoute: typeof RecursosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -119,11 +186,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contacto': {
+      id: '/contacto'
+      path: '/contacto'
+      fullPath: '/contacto'
+      preLoaderRoute: typeof ContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/la-firma': {
+      id: '/la-firma'
+      path: '/la-firma'
+      fullPath: '/la-firma'
+      preLoaderRoute: typeof LaFirmaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ruta-de-inversion': {
       id: '/ruta-de-inversion'
       path: '/ruta-de-inversion'
       fullPath: '/ruta-de-inversion'
       preLoaderRoute: typeof RutaDeInversionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicios-complementarios': {
+      id: '/servicios-complementarios'
+      path: '/servicios-complementarios'
+      fullPath: '/servicios-complementarios'
+      preLoaderRoute: typeof ServiciosComplementariosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/areas-de-practica/': {
@@ -154,16 +242,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MercadosInversionistasColombiaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/recursos/': {
+      id: '/recursos/'
+      path: '/recursos'
+      fullPath: '/recursos/'
+      preLoaderRoute: typeof RecursosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recursos/reforma-codigo-trabajo': {
+      id: '/recursos/reforma-codigo-trabajo'
+      path: '/recursos/reforma-codigo-trabajo'
+      fullPath: '/recursos/reforma-codigo-trabajo'
+      preLoaderRoute: typeof RecursosReformaCodigoTrabajoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactoRoute: ContactoRoute,
+  LaFirmaRoute: LaFirmaRoute,
   RutaDeInversionRoute: RutaDeInversionRoute,
+  ServiciosComplementariosRoute: ServiciosComplementariosRoute,
   AreasDePracticaAreaRoute: AreasDePracticaAreaRoute,
   MercadosDiasporaDominicanaRoute: MercadosDiasporaDominicanaRoute,
   MercadosInversionistasColombiaRoute: MercadosInversionistasColombiaRoute,
+  RecursosReformaCodigoTrabajoRoute: RecursosReformaCodigoTrabajoRoute,
   AreasDePracticaIndexRoute: AreasDePracticaIndexRoute,
+  RecursosIndexRoute: RecursosIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
