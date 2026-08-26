@@ -10,33 +10,104 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RutaDeInversionRouteImport } from './routes/ruta-de-inversion'
+import { Route as AreasDePracticaIndexRouteImport } from './routes/areas-de-practica.index'
+import { Route as AreasDePracticaAreaRouteImport } from './routes/areas-de-practica.$area'
+import { Route as MercadosDiasporaDominicanaRouteImport } from './routes/mercados.diaspora-dominicana'
+import { Route as MercadosInversionistasColombiaRouteImport } from './routes/mercados.inversionistas-colombia'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RutaDeInversionRoute = RutaDeInversionRouteImport.update({
+  id: '/ruta-de-inversion',
+  path: '/ruta-de-inversion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasDePracticaIndexRoute = AreasDePracticaIndexRouteImport.update({
+  id: '/areas-de-practica/',
+  path: '/areas-de-practica/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasDePracticaAreaRoute = AreasDePracticaAreaRouteImport.update({
+  id: '/areas-de-practica/$area',
+  path: '/areas-de-practica/$area',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MercadosDiasporaDominicanaRoute =
+  MercadosDiasporaDominicanaRouteImport.update({
+    id: '/mercados/diaspora-dominicana',
+    path: '/mercados/diaspora-dominicana',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MercadosInversionistasColombiaRoute =
+  MercadosInversionistasColombiaRouteImport.update({
+    id: '/mercados/inversionistas-colombia',
+    path: '/mercados/inversionistas-colombia',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ruta-de-inversion': typeof RutaDeInversionRoute
+  '/areas-de-practica/$area': typeof AreasDePracticaAreaRoute
+  '/mercados/diaspora-dominicana': typeof MercadosDiasporaDominicanaRoute
+  '/mercados/inversionistas-colombia': typeof MercadosInversionistasColombiaRoute
+  '/areas-de-practica/': typeof AreasDePracticaIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ruta-de-inversion': typeof RutaDeInversionRoute
+  '/areas-de-practica/$area': typeof AreasDePracticaAreaRoute
+  '/mercados/diaspora-dominicana': typeof MercadosDiasporaDominicanaRoute
+  '/mercados/inversionistas-colombia': typeof MercadosInversionistasColombiaRoute
+  '/areas-de-practica': typeof AreasDePracticaIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ruta-de-inversion': typeof RutaDeInversionRoute
+  '/areas-de-practica/$area': typeof AreasDePracticaAreaRoute
+  '/mercados/diaspora-dominicana': typeof MercadosDiasporaDominicanaRoute
+  '/mercados/inversionistas-colombia': typeof MercadosInversionistasColombiaRoute
+  '/areas-de-practica/': typeof AreasDePracticaIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/ruta-de-inversion'
+    | '/areas-de-practica/$area'
+    | '/mercados/diaspora-dominicana'
+    | '/mercados/inversionistas-colombia'
+    | '/areas-de-practica/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/ruta-de-inversion'
+    | '/areas-de-practica/$area'
+    | '/mercados/diaspora-dominicana'
+    | '/mercados/inversionistas-colombia'
+    | '/areas-de-practica'
+  id:
+    | '__root__'
+    | '/'
+    | '/ruta-de-inversion'
+    | '/areas-de-practica/$area'
+    | '/mercados/diaspora-dominicana'
+    | '/mercados/inversionistas-colombia'
+    | '/areas-de-practica/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  RutaDeInversionRoute: typeof RutaDeInversionRoute
+  AreasDePracticaAreaRoute: typeof AreasDePracticaAreaRoute
+  MercadosDiasporaDominicanaRoute: typeof MercadosDiasporaDominicanaRoute
+  MercadosInversionistasColombiaRoute: typeof MercadosInversionistasColombiaRoute
+  AreasDePracticaIndexRoute: typeof AreasDePracticaIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +119,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ruta-de-inversion': {
+      id: '/ruta-de-inversion'
+      path: '/ruta-de-inversion'
+      fullPath: '/ruta-de-inversion'
+      preLoaderRoute: typeof RutaDeInversionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas-de-practica/': {
+      id: '/areas-de-practica/'
+      path: '/areas-de-practica'
+      fullPath: '/areas-de-practica/'
+      preLoaderRoute: typeof AreasDePracticaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas-de-practica/$area': {
+      id: '/areas-de-practica/$area'
+      path: '/areas-de-practica/$area'
+      fullPath: '/areas-de-practica/$area'
+      preLoaderRoute: typeof AreasDePracticaAreaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mercados/diaspora-dominicana': {
+      id: '/mercados/diaspora-dominicana'
+      path: '/mercados/diaspora-dominicana'
+      fullPath: '/mercados/diaspora-dominicana'
+      preLoaderRoute: typeof MercadosDiasporaDominicanaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mercados/inversionistas-colombia': {
+      id: '/mercados/inversionistas-colombia'
+      path: '/mercados/inversionistas-colombia'
+      fullPath: '/mercados/inversionistas-colombia'
+      preLoaderRoute: typeof MercadosInversionistasColombiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  RutaDeInversionRoute: RutaDeInversionRoute,
+  AreasDePracticaAreaRoute: AreasDePracticaAreaRoute,
+  MercadosDiasporaDominicanaRoute: MercadosDiasporaDominicanaRoute,
+  MercadosInversionistasColombiaRoute: MercadosInversionistasColombiaRoute,
+  AreasDePracticaIndexRoute: AreasDePracticaIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
