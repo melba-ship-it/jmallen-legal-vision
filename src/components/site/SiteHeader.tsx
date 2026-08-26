@@ -35,7 +35,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
-      <div className="container-editorial grid grid-cols-[minmax(0,1fr)_auto] items-center gap-6 py-4 lg:py-5">
+      <div className="container-editorial grid grid-cols-[minmax(0,1fr)_auto] items-center gap-6 py-5 lg:py-6">
         <Link to="/" className="flex min-w-0 items-center" aria-label="Inicio">
           <img
             src={logoBlack.url}
