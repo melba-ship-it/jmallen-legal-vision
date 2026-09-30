@@ -57,7 +57,8 @@ export function PageHero({
           <img
             src={image}
             alt={imageAlt ?? ""}
-            loading="lazy"
+            loading="eager"
+            decoding="async"
             className="aspect-4/3 w-full object-cover lg:aspect-3/2"
           />
         )}
@@ -83,7 +84,7 @@ export function CtaBand({
         <div className="max-w-2xl">
           <h2 className="display-md text-balance">{title}</h2>
           {body && (
-            <p className="mt-5 text-sm leading-relaxed text-[color:var(--taupe)] md:text-base">
+            <p className="mt-5 text-base leading-relaxed text-[color:var(--paper)]">
               {body}
             </p>
           )}
@@ -110,7 +111,7 @@ export function NumberedList({
         <li key={item.number} className="bg-background p-8 md:p-10">
           <span className="font-display text-3xl text-[color:var(--sand)]">{item.number}</span>
           <h3 className="display-md mt-5 text-xl leading-snug">{item.title}</h3>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground">{item.body}</p>
         </li>
       ))}
     </ol>

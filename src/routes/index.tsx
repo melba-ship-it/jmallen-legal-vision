@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImage from "@/assets/hero-architecture.jpg";
-import coastImage from "@/assets/coast-development.jpg";
+import heroImage from "@/assets/santo-domingo-recepcion.jpg.asset.json";
+import coastImage from "@/assets/punta-cana-entrada.jpg.asset.json";
 import { CtaBand, Eyebrow, Section } from "@/components/site/primitives";
 import { FIRM, GATES, PILLARS, PRACTICE_AREAS } from "@/content/site";
 
@@ -24,6 +24,8 @@ export const Route = createFileRoute("/")({
         content:
           "Firma boutique liderada por Julia Alexandra Mallén Suárez. Un solo interlocutor, en su idioma, para decidir con independencia.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -37,17 +39,17 @@ function Home() {
       {/* Hero */}
       <section className="relative isolate overflow-hidden bg-ink text-[color:var(--paper)]">
         <img
-          src={heroImage}
-          alt="Arquitectura contemporánea en República Dominicana al atardecer"
+          src={heroImage.url}
+          alt="Recepción de la oficina de J. Mallén & Associates en Santo Domingo"
           width={1920}
           height={1280}
-          className="absolute inset-0 -z-10 h-full w-full object-cover opacity-45"
+          className="absolute inset-0 -z-10 h-full w-full object-cover opacity-35"
         />
         <div className="container-editorial flex min-h-[78vh] flex-col justify-end py-24 md:min-h-[86vh] md:py-32">
           <div className="fade-up max-w-4xl">
             <Eyebrow>República Dominicana · Firma boutique</Eyebrow>
             <h1 className="display-xl mt-7 text-balance">{FIRM.tagline}</h1>
-            <p className="mt-8 max-w-2xl text-base leading-relaxed text-[color:var(--taupe)] md:text-lg">
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[color:var(--paper)]">
               Firma boutique liderada por {FIRM.founder}. Un solo interlocutor, en su idioma, para
               decidir con independencia — esté donde esté.
             </p>
@@ -98,7 +100,7 @@ function Home() {
                     0{i + 1}
                   </span>
                   <h3 className="display-md mt-6 max-w-md text-balance">{gate.title}</h3>
-                  <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
                     {gate.description}
                   </p>
                 </div>
@@ -129,8 +131,8 @@ function Home() {
             </Link>
           </div>
           <img
-            src={coastImage}
-            alt="Desarrollo residencial en la costa dominicana"
+            src={coastImage.url}
+            alt="Entrada a la oficina de J. Mallén & Associates en Punta Cana"
             loading="lazy"
             width={1600}
             height={1000}
@@ -152,15 +154,11 @@ function Home() {
             {PILLARS.map((pillar) => (
               <li key={pillar.title} className="bg-background p-8">
                 <h3 className="display-md text-xl">{pillar.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{pillar.body}</p>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">{pillar.body}</p>
               </li>
             ))}
           </ul>
         </div>
-        <p className="mt-10 max-w-3xl border-l border-border pl-6 text-xs italic leading-relaxed text-muted-foreground">
-          [Espacio reservado para años de trayectoria, número de mandatos, alianzas o
-          reconocimientos — a completar únicamente con datos verificados por JMALLEN.]
-        </p>
       </Section>
 
       {/* Áreas de práctica */}
@@ -178,7 +176,7 @@ function Home() {
                 className="group grid gap-4 py-7 transition-opacity hover:opacity-60 md:grid-cols-[0.9fr_1.1fr] md:items-baseline"
               >
                 <h3 className="display-md text-2xl">{area.name}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">{area.hero}</p>
+                <p className="text-base leading-relaxed text-muted-foreground">{area.hero}</p>
               </Link>
             </li>
           ))}

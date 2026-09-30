@@ -13,17 +13,14 @@ export function SiteFooter() {
             loading="lazy"
             width={1920}
             height={549}
-            className="h-10 w-auto"
+            className="h-14 w-auto max-w-full object-contain object-left"
           />
-          <p className="mt-6 max-w-sm text-sm leading-relaxed text-[color:var(--taupe)]">
+          <p className="mt-6 max-w-sm text-base leading-relaxed text-[color:var(--paper)]">
             Firma boutique de asesoría legal estratégica en República Dominicana, liderada por{" "}
             {FIRM.founder}.
           </p>
-          <p className="mt-6 text-sm text-[color:var(--taupe)]">
+          <p className="mt-6 text-base text-[color:var(--paper)]">
             {FIRM.offices.join(" · ")}
-            <span className="block text-xs opacity-70">
-              [Confirmar sedes vigentes con la firma]
-            </span>
           </p>
         </div>
 
@@ -42,7 +39,7 @@ export function SiteFooter() {
               </li>
             ))}
           </ul>
-          <ul className="mt-6 space-y-2 text-xs italic text-[color:var(--taupe)]/80">
+          <ul className="mt-6 space-y-2 text-base italic text-[color:var(--paper)]">
             <li>
               <Link
                 to="/servicios-complementarios"
@@ -100,7 +97,7 @@ export function SiteFooter() {
       </div>
 
       <div className="border-t border-[color:var(--paper)]/15">
-        <div className="container-editorial flex flex-col gap-2 py-6 text-xs text-[color:var(--taupe)]/70 md:flex-row md:items-center md:justify-between">
+        <div className="container-editorial flex flex-col gap-2 py-6 text-sm text-[color:var(--paper)] md:flex-row md:items-center md:justify-between">
           <p>
             © {new Date().getFullYear()} {FIRM.name}
           </p>

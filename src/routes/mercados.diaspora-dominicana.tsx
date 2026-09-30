@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import coastImage from "@/assets/coast-development.jpg";
+import coastImage from "@/assets/punta-cana-entrada.jpg.asset.json";
 import { CtaBand, Eyebrow, PageHero, Section } from "@/components/site/primitives";
 
 const CASES = [
@@ -32,6 +32,8 @@ export const Route = createFileRoute("/mercados/diaspora-dominicana")({
         content:
           "Su vida está allá. Su patrimonio está aquí. Alguien tiene que responder por los dos lados.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/mercados/diaspora-dominicana" },
     ],
     links: [{ rel: "canonical", href: "/mercados/diaspora-dominicana" }],
@@ -46,8 +48,8 @@ function DiasporaPage() {
         eyebrow="Mercados · Diáspora dominicana"
         title="Su vida está allá. Su patrimonio está aquí. Alguien tiene que responder por los dos lados."
         lede="Comprar, heredar o poner en orden una propiedad en República Dominicana sin poder estar presente exige algo más que un abogado: exige alguien que le rinda cuentas con la misma disciplina con la que usted rinde cuentas en su trabajo en el exterior. Trabajamos con la diáspora dominicana en Estados Unidos, España y el resto del mundo bajo esa premisa."
-        image={coastImage}
-        imageAlt="Costa dominicana con desarrollo residencial"
+        image={coastImage.url}
+        imageAlt="Entrada a la oficina de J. Mallén & Associates en Punta Cana"
       />
 
       <Section>
@@ -56,7 +58,7 @@ function DiasporaPage() {
           {CASES.map((item) => (
             <li key={item.title} className="bg-background p-8 md:p-10">
               <h2 className="display-md text-xl">{item.title}</h2>
-              <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+               <p className="mt-5 text-base leading-relaxed text-muted-foreground">{item.body}</p>
             </li>
           ))}
         </ul>
@@ -70,7 +72,7 @@ function DiasporaPage() {
               Alguien que no le está vendiendo nada, de su lado, en su idioma.
             </h2>
           </div>
-          <div className="space-y-6 text-sm leading-relaxed text-muted-foreground md:text-base">
+          <div className="space-y-6 text-base leading-relaxed text-muted-foreground">
             <p>
               No vendemos inmuebles ni recibimos comisión de terceros. Cuando el mismo agente o
               desarrollador que vende la propiedad también recomienda a quien debe revisar el

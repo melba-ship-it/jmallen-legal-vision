@@ -5,9 +5,12 @@ export const FIRM = {
   tagline:
     "Asesoría legal estratégica para quienes construyen, invierten y deciden en República Dominicana.",
   offices: ["Santo Domingo", "Punta Cana"],
-  // Datos de contacto pendientes de confirmación por la firma.
-  emailPlaceholder: "[Pendiente: correo oficial de la firma]",
-  phonePlaceholder: "[Pendiente: teléfono oficial de la firma]",
+  email: "info@jmallenlawconsultant.com",
+  phone: "+1 809 534 7764",
+  addresses: [
+    { city: "Santo Domingo", street: "Av. Rómulo Betancourt, 1308 Corporate Center, suite 711" },
+    { city: "Punta Cana", street: "Blvd. 1ro de Noviembre, Edificio Cedro, suite 2010" },
+  ],
 };
 
 export type Gate = {

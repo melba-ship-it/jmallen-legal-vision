@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import coastImage from "@/assets/coast-development.jpg";
+import coastImage from "@/assets/punta-cana-entrada.jpg.asset.json";
 import { CtaBand, Eyebrow, PageHero, Section } from "@/components/site/primitives";
 
 const CHECKS = [
@@ -24,6 +24,8 @@ export const Route = createFileRoute("/mercados/inversionistas-colombia")({
         content:
           "Antes de firmar la reserva en Punta Cana, deje que alguien que no le está vendiendo nada lea ese contrato.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/mercados/inversionistas-colombia" },
     ],
     links: [{ rel: "canonical", href: "/mercados/inversionistas-colombia" }],
@@ -38,8 +40,8 @@ function ColombiaPage() {
         eyebrow="Mercados · Colombia"
         title="Antes de firmar la reserva en Punta Cana, deje que alguien que no le está vendiendo nada lea ese contrato."
         lede="Cada año, más colombianos deciden invertir en República Dominicana que en casi cualquier otro país del Caribe. La mayoría lo hace confiando en el mismo desarrollador que le vende el inmueble para que también le explique el contrato. JMallén existe, para el comprador colombiano, como la alternativa a eso: un asesor que solo responde ante usted."
-        image={coastImage}
-        imageAlt="Vista aérea del litoral de Punta Cana"
+        image={coastImage.url}
+        imageAlt="Entrada a la oficina de J. Mallén & Associates en Punta Cana"
       />
 
       <Section>
@@ -52,7 +54,7 @@ function ColombiaPage() {
           </div>
           <ul className="divide-y divide-border border-y border-border">
             {CHECKS.map((item) => (
-              <li key={item} className="py-6 text-sm leading-relaxed md:text-base">
+               <li key={item} className="py-6 text-base leading-relaxed">
                 {item}
               </li>
             ))}
@@ -72,10 +74,9 @@ function ColombiaPage() {
               Donde se concentra la mayoría de las operaciones colombianas.
             </h2>
           </div>
-          <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
+          <p className="text-base leading-relaxed text-muted-foreground">
             La firma cuenta con presencia en Santo Domingo y Punta Cana, el destino donde se
-            concentra la mayor parte de la llegada colombiana al país.{" "}
-            <span className="italic">[Confirmar sedes vigentes con JMALLEN.]</span>
+            concentra la mayor parte de la llegada colombiana al país.
           </p>
         </div>
       </Section>

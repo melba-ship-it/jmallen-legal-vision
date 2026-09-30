@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import officeImage from "@/assets/office-interior.jpg";
+import officeImage from "@/assets/santo-domingo-recepcion.jpg.asset.json";
+import juliaImage from "@/assets/julia-mallen.jpg.asset.json";
 import { CtaBand, Eyebrow, PageHero, Section } from "@/components/site/primitives";
 import { FIRM, PILLARS } from "@/content/site";
 
@@ -18,6 +19,8 @@ export const Route = createFileRoute("/la-firma")({
         content:
           "Rigor jurídico y visión empresarial para acompañar decisiones relevantes en República Dominicana.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/la-firma" },
     ],
     links: [{ rel: "canonical", href: "/la-firma" }],
@@ -32,8 +35,8 @@ function FirmaPage() {
         eyebrow="La Firma"
         title="Una firma boutique donde el criterio no se delega."
         lede={`${FIRM.name} es una firma boutique de asesoría legal estratégica en República Dominicana, liderada por su fundadora ${FIRM.founder}. Su enfoque combina rigor jurídico y visión empresarial para acompañar cada decisión con seguridad legal y resultados concretos.`}
-        image={officeImage}
-        imageAlt="Interior sobrio de una firma boutique"
+        image={officeImage.url}
+        imageAlt="Recepción de la oficina de J. Mallén & Associates en Santo Domingo"
       />
 
       <Section>
@@ -41,17 +44,17 @@ function FirmaPage() {
           <div>
             <Eyebrow>Julia Mallén</Eyebrow>
             <h2 className="display-lg mt-5 text-balance">{FIRM.founder}</h2>
+            <img src={juliaImage.url} alt="Julia Alexandra Mallén Suárez" loading="lazy" className="mt-8 aspect-3/4 w-full max-w-sm object-cover object-top" />
           </div>
-          <div className="space-y-6 text-sm leading-relaxed text-muted-foreground md:text-base">
+          <div className="space-y-6 text-base leading-relaxed text-muted-foreground">
             <p>
               Fundadora y responsable directa de los mandatos de la firma. Atiende a empresarios,
               propietarios, constructores, desarrolladores inmobiliarios e inversionistas
               —dominicanos y extranjeros— así como a personas naturales con necesidades legales de
               inversión inmobiliaria o migración.
             </p>
-            <p className="text-xs italic">
-              [Espacio reservado para trayectoria profesional, formación, colegiaturas e idiomas —
-              a completar únicamente con datos verificados por JMALLEN.]
+            <p>
+              La acompaña un equipo de abogados, notarios, agrimensores y asociados externos que aportan su especialidad según las necesidades de cada mandato.
             </p>
           </div>
         </div>
@@ -65,7 +68,7 @@ function FirmaPage() {
               Menos mandatos, más criterio en cada uno.
             </h2>
           </div>
-          <div className="space-y-6 text-sm leading-relaxed text-muted-foreground md:text-base">
+          <div className="space-y-6 text-base leading-relaxed text-muted-foreground">
             <p>
               Un modelo boutique no significa una firma pequeña: significa que quien conoce el caso
               es quien lo decide, que el interlocutor no cambia a mitad de camino y que el criterio
@@ -89,14 +92,10 @@ function FirmaPage() {
           {PILLARS.map((pillar) => (
             <li key={pillar.title} className="bg-background p-8 md:p-10">
               <h3 className="display-md text-xl">{pillar.title}</h3>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{pillar.body}</p>
+               <p className="mt-4 text-base leading-relaxed text-muted-foreground">{pillar.body}</p>
             </li>
           ))}
         </ul>
-        <p className="mt-10 max-w-3xl border-l border-border pl-6 text-xs italic leading-relaxed text-muted-foreground">
-          La firma no declara reconocimientos en rankings internacionales. Cualquier credencial
-          externa se publicará únicamente cuando exista y sea verificable.
-        </p>
       </Section>
 
       <CtaBand

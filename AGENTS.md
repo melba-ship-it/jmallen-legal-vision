@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+Use uploaded office and founder photographs through Lovable asset pointers, with the practice-area image mapping kept in its route, so the approved editorial content can change images without changing navigation.

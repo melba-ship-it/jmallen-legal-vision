@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CtaBand, Eyebrow, PageHero, Section } from "@/components/site/primitives";
+import workImage from "@/assets/santo-domingo-equipo.jpg.asset.json";
 
 const CHANGES = [
   "Jornada de trabajo",
@@ -25,6 +26,7 @@ export const Route = createFileRoute("/recursos/reforma-codigo-trabajo")({
           "Cambios previstos en jornada, teletrabajo, licencias, acoso laboral y digitalización de contratos.",
       },
       { property: "og:type", content: "article" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/recursos/reforma-codigo-trabajo" },
     ],
     links: [{ rel: "canonical", href: "/recursos/reforma-codigo-trabajo" }],
@@ -51,6 +53,8 @@ function ReformaPage() {
         eyebrow="Recursos · Derecho Laboral"
         title="Guía de cumplimiento ante la reforma del Código de Trabajo"
         lede="Toda empresa con personal en República Dominicana deberá revisar contratos, políticas internas y protocolos. Esta guía ordena qué revisar y en qué orden."
+        image={workImage.url}
+        imageAlt="Espacio de trabajo de J. Mallén & Associates en Santo Domingo"
       />
 
       <Section>
@@ -64,16 +68,12 @@ function ReformaPage() {
               lectura por el Senado en octubre de 2025 y en primera discusión por la Cámara de
               Diputados en mayo de 2026.
             </p>
-            <p className="border-l border-border pl-6 text-xs italic leading-relaxed text-muted-foreground">
-              [Verificar el estado vigente del trámite legislativo antes de la publicación
-              definitiva de esta pieza.]
-            </p>
 
             <div>
               <Eyebrow>Materias que introduce cambios</Eyebrow>
               <ul className="mt-6 divide-y divide-border border-y border-border">
                 {CHANGES.map((c) => (
-                  <li key={c} className="py-5 text-sm md:text-base">
+                  <li key={c} className="py-5 text-base">
                     {c}
                   </li>
                 ))}
@@ -82,7 +82,7 @@ function ReformaPage() {
 
             <div>
               <Eyebrow>Qué debe revisar su empresa</Eyebrow>
-              <ol className="mt-6 space-y-5 text-sm leading-relaxed text-muted-foreground md:text-base">
+              <ol className="mt-6 space-y-5 text-base leading-relaxed text-muted-foreground">
                 <li>
                   <span className="text-foreground">01 · Contratos vigentes.</span> Cláusulas de
                   jornada, modalidad de trabajo y causales, contrastadas con el texto que resulte

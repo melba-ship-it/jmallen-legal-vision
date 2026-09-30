@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CtaBand, PageHero, Section } from "@/components/site/primitives";
 import { PRACTICE_AREAS } from "@/content/site";
+import meetingImage from "@/assets/santo-domingo-reuniones.jpg.asset.json";
 
 export const Route = createFileRoute("/areas-de-practica/")({
   head: () => ({
@@ -17,6 +18,8 @@ export const Route = createFileRoute("/areas-de-practica/")({
         content:
           "Cinco áreas con el mismo peso: inmobiliario, corporativo, migratorio, laboral y desarrollo de negocios.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/areas-de-practica" },
     ],
     links: [{ rel: "canonical", href: "/areas-de-practica" }],
@@ -31,6 +34,8 @@ function AreasIndex() {
         eyebrow="Áreas de práctica"
         title="Cinco áreas con el mismo peso, coordinadas bajo un mismo criterio."
         lede="Ninguna decisión relevante en República Dominicana se resuelve dentro de una sola área. Estas son las cinco que la firma trabaja, y la lógica con la que se articulan entre sí."
+        image={meetingImage.url}
+        imageAlt="Sala de reuniones de J. Mallén & Associates en Santo Domingo"
       />
 
       <Section>
@@ -44,7 +49,7 @@ function AreasIndex() {
               >
                 <h2 className="display-md text-2xl">{area.name}</h2>
                 <div>
-                  <p className="text-sm leading-relaxed md:text-base">{area.hero}</p>
+                   <p className="text-base leading-relaxed">{area.hero}</p>
                   <span className="link-underline mt-5">Ver área</span>
                 </div>
               </Link>

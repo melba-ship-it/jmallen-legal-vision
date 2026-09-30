@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import officeImage from "@/assets/office-interior.jpg";
+import officeImage from "@/assets/santo-domingo-reuniones.jpg.asset.json";
 import { CtaBand, Eyebrow, NumberedList, PageHero, Section } from "@/components/site/primitives";
 import { PRACTICE_AREAS, ROUTE_PHASES, ROUTE_PROFILES } from "@/content/site";
 
@@ -18,6 +18,8 @@ export const Route = createFileRoute("/ruta-de-inversion")({
         content:
           "Un solo camino, cinco áreas de derecho, tres formas de necesitarlo. Estructure su entrada a República Dominicana con un solo criterio.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/ruta-de-inversion" },
     ],
     links: [{ rel: "canonical", href: "/ruta-de-inversion" }],
@@ -32,8 +34,8 @@ function RutaPage() {
         eyebrow="Producto insignia"
         title="Un solo camino, cinco áreas de derecho, tres formas de necesitarlo."
         lede="Invertir, comprar o establecerse en República Dominicana rara vez implica un solo problema legal: implica varios, en distintas áreas, que además dependen entre sí. La Ruta de Inversión JMallén los coordina bajo un mismo criterio, para que usted no tenga que coordinar, por su cuenta, a cuatro o cinco proveedores que no se conocen entre ellos."
-        image={officeImage}
-        imageAlt="Sala de reuniones de una firma boutique"
+        image={officeImage.url}
+        imageAlt="Sala de reuniones de J. Mallén & Associates en Santo Domingo"
       />
 
       <Section id="tres-perfiles">
@@ -64,14 +66,11 @@ function RutaPage() {
                 {phase.number}
               </span>
               <h3 className="display-md text-xl">{phase.title}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{phase.body}</p>
+              <p className="text-base leading-relaxed text-muted-foreground">{phase.body}</p>
             </li>
           ))}
         </ol>
 
-        <p className="mt-8 max-w-3xl text-xs italic leading-relaxed text-muted-foreground">
-          [Secuencia propuesta a validar contra la metodología real de trabajo de JMALLEN.]
-        </p>
       </Section>
 
       <Section>
