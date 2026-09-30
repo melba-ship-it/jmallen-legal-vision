@@ -35,12 +35,12 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
-      <div className="container-editorial grid grid-cols-[minmax(0,1fr)_auto] items-center gap-6 py-5 lg:py-6">
+      <div className="container-editorial grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-4 lg:gap-6 lg:py-5">
         <Link to="/" className="flex min-w-0 items-center" aria-label="Inicio">
           <img
             src={logoBlack.url}
             alt="J. Mallén & Associates Law Consultant"
-            className="h-8 w-auto shrink-0 md:h-9"
+            className="h-11 w-auto max-w-[min(62vw,15rem)] shrink-0 object-contain object-left md:h-12 md:max-w-none lg:h-13"
             width={1920}
             height={549}
           />
