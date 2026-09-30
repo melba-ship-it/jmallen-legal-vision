@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CtaBand, Eyebrow, PageHero, Section } from "@/components/site/primitives";
+import workImage from "@/assets/santo-domingo-equipo.jpg.asset.json";
 
 export const Route = createFileRoute("/recursos/")({
   head: () => ({
@@ -30,6 +31,8 @@ function RecursosPage() {
         eyebrow="Recursos"
         title="Contenido de autoridad para decidir antes, no después."
         lede="Material dirigido a empresas y responsables que prefieren revisar su exposición legal de forma preventiva."
+        image={workImage.url}
+        imageAlt="Equipo trabajando en la oficina de J. Mallén & Associates en Santo Domingo"
       />
 
       <Section>
@@ -46,7 +49,7 @@ function RecursosPage() {
                 </h2>
               </div>
               <div>
-                <p className="text-sm leading-relaxed md:text-base">
+                 <p className="text-base leading-relaxed">
                   Qué debe revisar toda empresa con personal en contratos, políticas internas y
                   protocolos ante los cambios previstos en jornada, teletrabajo, licencias, acoso
                   laboral y digitalización de contratos.
@@ -56,9 +59,9 @@ function RecursosPage() {
             </Link>
           </li>
         </ul>
-        <p className="mt-10 text-xs italic text-muted-foreground">
+        <p className="mt-10 text-base italic text-muted-foreground">
           Próximos contenidos: calificación CONFOTUR, régimen de zona franca y guía de compra para
-          el inversionista colombiano. [Calendario editorial a definir con JMALLEN.]
+          el inversionista colombiano.
         </p>
       </Section>
 
