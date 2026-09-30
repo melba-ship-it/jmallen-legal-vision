@@ -69,7 +69,7 @@ function FirmaPage() {
           <div className="space-y-6 text-base leading-relaxed text-muted-foreground">
             <p>
               Un modelo boutique no significa una firma pequeña: significa que quien conoce el caso
-              participa en su dirección, que existe continuidad en la comunicación y que el criterio
+              es quien lo decide, que el interlocutor no cambia a mitad de camino y que el criterio
               jurídico se pone al servicio de una decisión empresarial o patrimonial concreta.
             </p>
             <p>

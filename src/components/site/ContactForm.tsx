@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { SITUATIONS } from "@/content/site";
+import { FIRM, SITUATIONS } from "@/content/site";
 
 const fieldClass =
   "w-full border-0 border-b border-input bg-transparent px-0 py-3 text-base text-foreground outline-hidden transition-colors placeholder:text-muted-foreground focus:border-foreground";
@@ -9,6 +9,16 @@ export function ContactForm() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const fields = new FormData(event.currentTarget);
+    const message = [
+      `Nombre: ${fields.get("nombre") ?? ""}`,
+      `Correo: ${fields.get("email") ?? ""}`,
+      `País: ${fields.get("pais") ?? ""}`,
+      `Situación: ${fields.get("situacion") ?? ""}`,
+      "",
+      String(fields.get("mensaje") ?? ""),
+    ].join("\n");
+    window.location.href = `mailto:${FIRM.email}?subject=${encodeURIComponent("Consulta inicial J. Mallén")}&body=${encodeURIComponent(message)}`;
     setSent(true);
   }
 
