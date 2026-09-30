@@ -47,7 +47,7 @@ function Home() {
         />
         <div className="container-editorial flex min-h-[78vh] flex-col justify-end py-24 md:min-h-[86vh] md:py-32">
           <div className="fade-up max-w-4xl">
-            <Eyebrow>República Dominicana · Firma boutique</Eyebrow>
+            <Eyebrow>REPÚBLICA DOMINICANA · FIRMA DE ABOGADOS BOUTIQUE</Eyebrow>
             <h1 className="display-xl mt-7 text-balance">{FIRM.tagline}</h1>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[color:var(--paper)]">
               Firma boutique liderada por {FIRM.founder}. Un solo interlocutor, en su idioma, para
