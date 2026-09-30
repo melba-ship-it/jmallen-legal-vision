@@ -48,7 +48,7 @@ function AreaPage() {
 
   return (
     <>
-      <PageHero eyebrow={`Áreas de práctica · ${area.name}`} title={area.hero} lede={area.lede} image={areaImages[area.slug]?.url} imageAlt={areaImages[area.slug]?.alt} />
+      <PageHero eyebrow={`Áreas de práctica · ${area.name}`} title={area.hero} lede={area.lede} image={areaImages[area.slug]?.url ?? meetingImage.url} imageAlt={areaImages[area.slug]?.alt ?? "Espacio de reuniones de J. Mallén & Associates"} />
 
       <Section>
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
