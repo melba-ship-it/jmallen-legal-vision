@@ -18,6 +18,8 @@ export const Route = createFileRoute("/ruta-de-inversion")({
         content:
           "Un solo camino, cinco áreas de derecho, tres formas de necesitarlo. Estructure su entrada a República Dominicana con un solo criterio.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/ruta-de-inversion" },
     ],
     links: [{ rel: "canonical", href: "/ruta-de-inversion" }],

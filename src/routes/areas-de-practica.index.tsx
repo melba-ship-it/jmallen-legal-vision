@@ -18,6 +18,8 @@ export const Route = createFileRoute("/areas-de-practica/")({
         content:
           "Cinco áreas con el mismo peso: inmobiliario, corporativo, migratorio, laboral y desarrollo de negocios.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/areas-de-practica" },
     ],
     links: [{ rel: "canonical", href: "/areas-de-practica" }],

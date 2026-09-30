@@ -17,6 +17,8 @@ export const Route = createFileRoute("/recursos/")({
         content:
           "Análisis y guías de cumplimiento para empresas que deciden de forma preventiva en República Dominicana.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/recursos" },
     ],
     links: [{ rel: "canonical", href: "/recursos" }],

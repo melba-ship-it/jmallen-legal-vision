@@ -24,6 +24,8 @@ export const Route = createFileRoute("/")({
         content:
           "Firma boutique liderada por Julia Alexandra Mallén Suárez. Un solo interlocutor, en su idioma, para decidir con independencia.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],

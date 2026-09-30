@@ -26,6 +26,7 @@ export const Route = createFileRoute("/recursos/reforma-codigo-trabajo")({
           "Cambios previstos en jornada, teletrabajo, licencias, acoso laboral y digitalización de contratos.",
       },
       { property: "og:type", content: "article" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/recursos/reforma-codigo-trabajo" },
     ],
     links: [{ rel: "canonical", href: "/recursos/reforma-codigo-trabajo" }],

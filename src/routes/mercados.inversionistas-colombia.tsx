@@ -24,6 +24,8 @@ export const Route = createFileRoute("/mercados/inversionistas-colombia")({
         content:
           "Antes de firmar la reserva en Punta Cana, deje que alguien que no le está vendiendo nada lea ese contrato.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/mercados/inversionistas-colombia" },
     ],
     links: [{ rel: "canonical", href: "/mercados/inversionistas-colombia" }],

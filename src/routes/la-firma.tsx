@@ -19,6 +19,8 @@ export const Route = createFileRoute("/la-firma")({
         content:
           "Rigor jurídico y visión empresarial para acompañar decisiones relevantes en República Dominicana.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/la-firma" },
     ],
     links: [{ rel: "canonical", href: "/la-firma" }],

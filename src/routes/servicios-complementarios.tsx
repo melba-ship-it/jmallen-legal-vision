@@ -16,6 +16,8 @@ export const Route = createFileRoute("/servicios-complementarios")({
         property: "og:description",
         content: "Derecho de Familia y Gestión y Cobranza de Cartera.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/servicios-complementarios" },
     ],
     links: [{ rel: "canonical", href: "/servicios-complementarios" }],

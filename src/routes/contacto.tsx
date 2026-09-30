@@ -18,6 +18,8 @@ export const Route = createFileRoute("/contacto")({
         property: "og:description",
         content: "Antes de decidir, converse con quien va a acompañar la decisión.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/contacto" },
     ],
     links: [{ rel: "canonical", href: "/contacto" }],

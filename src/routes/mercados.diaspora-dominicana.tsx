@@ -32,6 +32,8 @@ export const Route = createFileRoute("/mercados/diaspora-dominicana")({
         content:
           "Su vida está allá. Su patrimonio está aquí. Alguien tiene que responder por los dos lados.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/mercados/diaspora-dominicana" },
     ],
     links: [{ rel: "canonical", href: "/mercados/diaspora-dominicana" }],
